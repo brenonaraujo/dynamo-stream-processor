@@ -1,0 +1,20 @@
+{
+  "name": "stream-to-archive",
+  "version": "1.0.0",
+  "description": "h",
+  "main": "app.js",
+  "repository": "",
+  "author": "SAM CLI",
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.3.0",
+    "@aws-sdk/types": "^3.3.0",
+    "ts-node": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.51",
+    "@types/node": "^14.0.23",
+    "typescript": "^4.0.2"
+  }
+}
