@@ -14,9 +14,7 @@ Resources:
   StreamToArchive:
     Type: AWS::Serverless::Function
     Properties:
-      PackageType: Image
-    Metadata:
-      DockerTag: nodejs14.x-v1
-      DockerContext: ./stream-to-archive
-      Dockerfile: Dockerfile
+      CodeUri: hello-world/bin/
+      Handler: app.handler
+      Runtime: nodejs14.x
 
