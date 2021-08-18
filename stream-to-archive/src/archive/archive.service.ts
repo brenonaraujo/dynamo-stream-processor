@@ -21,6 +21,11 @@ export class ArchiveService {
         return `${prefix}/${this.pathPartitionFromDate(new Date)}/`
     }
 
+    /**
+     * Archive an archivable object into pre defined storage settings
+     * @param object Archivable object with ReadableStream
+     * @returns 
+     */
     async jsonObjectArchive(object: IArchivable): Promise<ArchiveResult> {
         try {
             console.log(`Trying to archive object: ${object.name} as ${object.objectType}`)
