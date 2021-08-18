@@ -1,6 +1,6 @@
 import { IStorageService } from "../storage/storage.service";
 import { ArchiveResult } from "./archiveResult";
-import { IArchivable } from "./atchivable";
+import { IArchivable } from "./archivable";
 
 export class ArchiveService {
     private storageService: IStorageService
@@ -23,6 +23,7 @@ export class ArchiveService {
 
     async jsonObjectArchive(object: IArchivable): Promise<ArchiveResult> {
         try {
+            console.log(`Trying to archive object: ${object.name} as ${object.objectType}`)
             const archivePath = this.archiveLocale();
             const storageResult = await this.storageService.saveObject(object.binary, object.name, archivePath)
             const result: ArchiveResult = {
@@ -30,6 +31,7 @@ export class ArchiveService {
                 format: object.objectType,
                 locale: storageResult.storageProvider
             }
+            console.log(result.message)
             return result;
         } catch (error) {
             console.error(error)
